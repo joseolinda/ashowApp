@@ -1,0 +1,7 @@
+Aplicativo = ashowApp
+API = ashowmoura
+
+1 - Instalar o node modules dentro da pasta do aplicativo (Comando -> 'npm install')
+2 - Executar o comando 'react-native run-android' dentro da pasta do aplicativo (Emulador Android instalado ou celular conectado ao notebook)
+3 - Iniciar o Xampp, colocar o arquivo .env dentro da pasta da API, executar o comando 'php artisan db:seed'
+4 - Executar a API com o comando 'php artisan serve' 
