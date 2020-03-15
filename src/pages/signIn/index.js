@@ -56,41 +56,16 @@ export default class SignIn extends Component {
                 this.setState({ error: 'Preencha usuário e senha para continuar!' }, () => false);
                 return ;
             }
-            let response = [];
+    
 
             const {email, password} = this.state;
-            try {
-                const data = new FormData();
-                data.append('password', this.state.password);
-                data.append('username', this.state.email);
 
-                const response = await api.post('api/login', {
+
+                const response = await api.post('login', {
                     email,
                     password
                 })
 
-                if (response.status === 200) {
-                    console.log("logado!")
-                }
-
-                // response = await api.post('api/login', {
-                //     email: this.state.email,
-                //     password: this.state.password,
-                // }).then(
-                //     // This stuff all seems to work great
-                //      console.log("OK")
-                //     ).catch(
-                //     function (err) {
-                //         // Run into big problems when I get an error
-                //         console.log("Got an error logging in, here's the message: ", err);
-                //     }
-                // );
-
-            } catch (_err) {
-                console.tron.log(_err);
-                this.setState({ error: 'Houve um problema com o login, verifique suas credenciais!' });
-            }
-        console.log(response);
 
             if(response.data.access_token){
                 const token = response.data.access_token;
